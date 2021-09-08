@@ -71,7 +71,7 @@ print(random_string)
 
 print("2.4.1")
 str = input()
-str_end = ""
+str_end = "sdfsf"
 for i in str:
     if i.isdigit() == True:
         str_end += i
