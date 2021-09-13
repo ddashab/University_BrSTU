@@ -5,14 +5,13 @@ import os
 def read_data_from_csv(filename):  # task 5
     with open(filename, "r", encoding="utf-8") as file:
         data_r = file.read().split("\n")
-        data_r.pop(-1)  # В конце списка вылезает пустой элемент и программа херится, поэтому удаляю его
-        data_r.pop(0)
+    data_r.pop(0)
     return data_r
 
 
 def write_data_to_file(filename, data):  # task5
     with open(filename, "a", encoding="utf-8") as file_w:
-        file_w.write("№;ФИО;Возраст;Группа\n")
+        file_w.write("\n№;ФИО;Возраст;Группа\n")
         for i in data:
             file_w.write(f'{";".join(i)}\n')
 
