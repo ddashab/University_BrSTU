@@ -23,6 +23,7 @@ def task_1():
         while i < len(elements):
             new_list.append(elements[i])
             i += 2
+        print('Исходный список:', elements)
         print('Новый список, состоящий из нечётных элементов: ', new_list)
 
     def task_1_3():
@@ -32,15 +33,16 @@ def task_1():
         for i in elements:
             if i < 10:
                 result *= i
-        print(result)
+        print('Исходный список:', elements)
+        print('Произведение всех чисел меньше 10:', result)
 
     def task_1_4():
         print('\nЗадание 1.4')
         list_size = int(input('Ведите размер списка: '))
-        elements = [int(input('Введите элемент списка: ')) for i in range(list_size)]
+        elements = [int(input(f'Введите {i+1}-й элемент списка: ')) for i in range(list_size)]
         middle = int((len(elements)/2))
         if list_size % 2 == 0:
-            print('Элемент посередине массива: ', elements[middle-1], 'или', elements[middle])
+            print(f'Элемент посередине массива: {elements[middle-1]} или {elements[middle]}')
         else:
             print('Элемент посередине массива: ', elements[middle])
     task_1_1()
@@ -57,7 +59,7 @@ def task_2():
         if user_number <= 5:
             while user_number <= my_number:
                 user_number = int(input('Введите новое значение: '))
-        print('Ваше число больше ', my_number, '!')
+        print(f'Ваше число больше {my_number}!')
 
     def task_2_2():
         print('\nЗадание 2.2')
@@ -66,6 +68,7 @@ def task_2():
         for i in my_strings:
             if i.startswith('r'):
                 result_string.append(i)
+        print('Исходные данные:', my_strings)
         print('Result: ', result_string)
 
     def task_2_3():
@@ -75,7 +78,7 @@ def task_2():
         length = 8
         letters = string.ascii_letters
         digits = string.digits
-        rand_string = ''.join(random.choice(letters + digits) for i in range(length))
+        rand_string = ''.join(random.choice(letters + digits) for _ in range(length))
         print(rand_string)
 
     def task_2_4():
@@ -89,6 +92,7 @@ def task_2():
             else:
                 if i.isalpha():
                     letters += i
+        print('Исходные данные:', main_string)
         print('Digits:', digits)
         print('Letters:', letters)
     task_2_1()
@@ -162,7 +166,7 @@ def task_3():
                   [1, 7, 5, 9, 7, 3, 1, 5],
                   [2, 6, 3, 5, 1, 7, 3, 2]]
         for i in range(4):
-                matrix.pop()
+            matrix.pop()
         pprint(matrix)
 
     def task_3_5():
@@ -181,7 +185,7 @@ def task_3():
         pprint(matrix)
 
     def task_3_6():
-        print ('\nЗадание 3.6')
+        print('\nЗадание 3.6')
         from pprint import pprint
         matrix = [[1, 2, 3, 4, 5, 6, 7, 8],
                   [8, 7, 6, 5, 4, 3, 2, 1],
@@ -232,30 +236,32 @@ def task_4():
         for i in split_string:
             if i.find('ов') != -1:
                 result_string = result_string + i + ' '
+        print('Исходные данные:', test_string)
         print(result_string)
 
     def task_4_2():
         print('\nЗадание 4.2')
         my_string = 'Ф;И;О;Возраст;Категория;_Иванов;Иван;Иванович;23 года;Студент 3 курса;' \
                     '_Петров;Семен;Игоревич;22 года;Студент 2 курса'
-        my_list = [str.split(';') for i, str in enumerate(my_string.split('_')) if i > 0]
-        print('ФИО \t\t\t\t\tО студенте')
+        my_list = [str_.split(';') for i, str_ in enumerate(my_string.split('_')) if i > 0]
+        print('{:<25}{}'.format('ФИО', 'О студенте'))
         for element in my_list:
-            print(element[0], element[1], element[2], element[4].rjust(18) + ',', element[3])
+            print(f'{element[0]} {element[1]} {element[2]:<13}{element[4]}, {element[3]}')
 
     def task_4_3():
         print('\nЗадание 4.3')
         my_string = 'ФИО;Возраст;Категория;_Иванов Иван Иванович;23 года;Студент 3 курса;' \
                     '_Петров Семен Игоревич;22 года;Студент 2 курса;_Иванов Семен Игоревич;22 года; Студент 2 курса;' \
-                    '_Акибов Ярослав Наумович;23 года;Студент 3 курса;_Борков Станислав Максимович;21 год;Студент 1 курса;' \
-                    '_Петров Семен Семенович;21 год;Студент 1 курса;_Романов Станислав Андреевич;23 года;Студент 3 курса' \
+                    '_Акибов Ярослав Наумович;23 года;Студент 3 курса;' \
+                    '_Борков Станислав Максимович;21 год;Студент 1 курса;' \
+                    '_Петров Семен Семенович;21 год;Студент 1 курса;' \
+                    '_Романов Станислав Андреевич;23 года;Студент 3 курса' \
                     '_Петров Всеволод Борисович;21 год;Студент 2 курса'
-        my_list = [str.split(';') for i, str in enumerate(my_string.split('_')) if i > 0]
-        print('ФИО\t\t\t\t\t\t\t\tВозраст\t\tКатегория')
-        counter = 0
+        my_list = [str_.split(';') for i, str_ in enumerate(my_string.split('_')) if i > 0]
+        print('{:<32}{:<11}{}'.format('ФИО', 'Возраст', 'Категория'))
         for element in my_list:
             if element[0].startswith('А') or element[0].startswith('Б'):
-                print(element[0].ljust(31), element[1].ljust(11), element[2])
+                print(f'{element[0]:<32}{element[1]:<11}{element[2]}')
 
     def task_4_4():
         print('\nЗадание 4.4')
@@ -265,6 +271,7 @@ def task_4():
             if string.ascii_letters.find(i) != -1:
                 count += 1
         amount_words = len(my_string.split(' '))
+        print('Ваша строка:', my_string)
         print('Количество символов в строке:', count)
         print('Количество слов в строке:', amount_words)
     task_4_1()
@@ -275,6 +282,7 @@ def task_4():
 
 def task_5():
     import random
+
     def task_5_1():
         print('Задание 5.1')
 
@@ -292,12 +300,12 @@ def task_5():
             for j in range(0, size):
                 matrix[i].append(random.randint(0, 10))
                 my_list.append(matrix[i][j])
-        sum = 0
+        summ = 0
         for k in my_list:
-            sum += k
-        print_matrix (matrix)
+            summ += k
+        print_matrix(matrix)
         print('Список из матрицы:', my_list)
-        print('Результат сложения всех элементов матрицы:', sum)
+        print('Результат сложения всех элементов матрицы:', summ)
 
     def task_5_2():
         print('\nЗадание 5.2')
@@ -312,28 +320,28 @@ def task_5():
         for element in my_list:
             if element % 2 == 1:
                 result_string.append(element)
-        print ('Итоговый список, состоящий из нечётных элементов:', result_string)
+        print('Итоговый список, состоящий из нечётных элементов:', result_string)
 
     def task_5_3():
         print('\nЗадание 5.3')
         my_len = [['БО-331101', ['Акулова Алена', 'Бабушкина Ксения']],
                   ['БОВ-421102', ['Кузьмин Артём', 'Прокофьев Максим']],
                   ['БО-331103', ['Тарасов Иван', 'Егоров Герман']]]
-        print('Название группы\t\t\tФИО\t\t\t\tФИО')
+        print('{:<18}{:<16}{}'.format('Название группы', 'ФИО', 'ФИО'))
         for element in my_len:
             if element[0].startswith('БО-'):
-                print(element[0].ljust(17), element[1][0].ljust(15), element[1][1])
+                print(f'{element[0]:<18}{element[1][0]:<16}{element[1][1]}')
 
     def task_5_4():
         print('\nЗадание 5.4')
         my_len = [['БО-331101', ['Акулова Алена', 'Бабушкина Ксения', 'Баженов Максим', 'Лапина Мелания']],
                   ['БОВ-421102', ['Кузьмин Артём', 'Прокофьев Максим', 'Тарасов Алексей', 'Грачев Александр']],
                   ['БО-331103', ['Тарасов Иван', 'Егоров Герман', 'Румянцев Матвей', 'Архипов Тимофей']]]
-        print('Студент\t\t\t\t\tГруппа')
+        print('{:<19}{}'.format('Студент', 'Группа'))
         for groups in my_len:
             for counter, student in enumerate(groups[1]):
-                if counter % 2 == 0:
-                    print(student, groups[0].rjust(18))
+                if counter % 2 == 1:
+                    print('{:<19}{}'.format(student, groups[0]))
     task_5_1()
     task_5_2()
     task_5_3()
@@ -342,15 +350,15 @@ def task_5():
 
 def main():
     def menu() -> str:
-        choice = str(input('Введите номер задания, которое хотите выполнить:'
-                           '\n1 - №1'
-                           '\n2 - №2'
-                           '\n3 - №3'
-                           '\n4 - №4'
-                           '\n5 - №5'
-                           '\nДля выхода нажмите "t"'
-                           '\n-->'))
-        return choice
+        choice_ = str(input('Введите номер задания, которое хотите выполнить:'
+                            '\n1 - №1'
+                            '\n2 - №2'
+                            '\n3 - №3'
+                            '\n4 - №4'
+                            '\n5 - №5'
+                            '\nДля выхода нажмите "t"'
+                            '\n-->'))
+        return choice_
     while True:
         choice = menu()
         if choice == '1':
@@ -373,9 +381,5 @@ def main():
             break
 
 
-main()
-
-
-
-
-
+if __name__ == '__main__':
+    main()
