@@ -1,4 +1,5 @@
 #include "class.h"
+#pragma execution_character_set("utf-8")
 
 Person::Person() //конструктор по умолчанию 
 {
