@@ -4,10 +4,11 @@
 #include "megapolis.h"
 
 int main(){
-    list<Place*> places;
+    list<Place*> places;  //making list with class type
 
     auto *brestRegion = new Region("Brest", 25);
-    brestRegion->set_count(58);
+    brestRegion->set_count(58);  //testing function set_count()
+    //adding elements to the list
     places.push_back(brestRegion);
 
     places.push_back(new Region("Minsk", 125));
@@ -20,6 +21,7 @@ int main(){
     places.push_back(new Megapolis("Grodno", 171.95, 326800));
     places.push_back(vitebskRegion);
 
+    //display all elements of the list
     std::for_each(places.begin(), places.end(), [](Place* place){
         place->show();
     });

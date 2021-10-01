@@ -6,14 +6,14 @@
 #define LAB_2_TOWN_H
 #include "place.h"
 
-class Town : public Place{
+class Town : public Place{  //Town class declaration
 protected:
     float square;
 public:
-    Town(string name, float square);
-    void show();
-    void set_square(float square);
-    float get_square();
+    Town(string name, float square);  //constructor with parameters
+    void show();  //redeclaration of the show function
+    void set_square(float square);  //set field square
+    float get_square();  //to get value of the field square
 };
 
 #endif //LAB_2_TOWN_H

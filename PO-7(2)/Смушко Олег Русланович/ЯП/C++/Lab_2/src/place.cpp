@@ -4,6 +4,6 @@
 
 #include "place.h"
 
-Place::Place(string name){
+Place::Place(string name){  //Defining constructor with parameters
     this->name = name;
 }

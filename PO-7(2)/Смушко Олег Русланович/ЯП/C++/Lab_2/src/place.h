@@ -11,11 +11,11 @@
 
 using namespace std;
 
-class Place{
+class Place{  //Abstract class Place declaration
 protected:
     string name;
 public:
-    Place(string name);
-    virtual void show() = 0;
+    Place(string name);  //constructor with parameters
+    virtual void show() = 0;  //Clear virtual function for display list
 };
 #endif //LAB_2_PLACE_H

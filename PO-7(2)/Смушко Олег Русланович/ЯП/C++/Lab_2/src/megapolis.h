@@ -7,14 +7,14 @@
 #include "place.h"
 #include "town.h"
 
-class Megapolis: public Town{
+class Megapolis: public Town{  //Megapolis class declaration
 protected:
     int population;
 public:
-    Megapolis(string name, float square, int population);
-    void show();
-    void set_population(int population);
-    int get_population();
+    Megapolis(string name, float square, int population);  //constructor with parameters
+    void show();  //redeclaration of the show function
+    void set_population(int population);  //set field population
+    int get_population();  //to get value of the field population
 };
 
 #endif //LAB_2_MEGAPOLIS_H
