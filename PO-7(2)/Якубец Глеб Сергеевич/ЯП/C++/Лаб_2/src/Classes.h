@@ -6,7 +6,7 @@
 using namespace std;
 
 
-class State {                  //Абстрактный базовый класс
+class State {                  //ГЂГЎГ±ГІГ°Г ГЄГІГ­Г»Г© ГЎГ Г§Г®ГўГ»Г© ГЄГ«Г Г±Г±
 protected:	
 	State* ptr_next;
 	string name;
@@ -19,7 +19,7 @@ public:
 	virtual void show() = 0;
 };
 
-class Republic : public State {                 //Класс Республика
+class Republic : public State {                 //ГЉГ«Г Г±Г± ГђГҐГ±ГЇГіГЎГ«ГЁГЄГ 
 protected:
 	float term;
 	string type;
@@ -29,7 +29,7 @@ public:
 	void show();
 };
 
-class Monarchy: public State {                  //Класс Монархия
+class Monarchy: public State {                  //ГЉГ«Г Г±Г± ГЊГ®Г­Г Г°ГµГЁГї
 protected:
 	string type;
 	int age_of_monarch;
@@ -40,7 +40,7 @@ public:
 	void show();
 };
 
-class Kingdom: public Monarchy {                //Класс Королевство
+class Kingdom: public Monarchy {                //ГЉГ«Г Г±Г± ГЉГ®Г°Г®Г«ГҐГўГ±ГІГўГ®
 protected:
 	string type_of_crown;
 public:
