@@ -27,10 +27,10 @@ Republic::Republic(string nm, int ar, int popn, State* p_next, float tm, string 
 	type = tp;
 }
 Republic::~Republic() {
-	cout << "Ðåñïóáëèêà óíè÷òîæåíà" << endl;
+	cout << "ÃÃ¥Ã±Ã¯Ã³Ã¡Ã«Ã¨ÃªÃ  Ã³Ã­Ã¨Ã·Ã²Ã®Ã¦Ã¥Ã­Ã " << endl;
 }
 void Republic::show() {
-	cout << "Ðåñïóáëèêà " << name << endl << " Ïëîùàäü: " << area << endl << " Íàñåëåíèå: " << population << endl << " Ýêâ. âàëþòû â äîëëàðàõ: " << term << endl << " Òèï: " << type << endl << endl;
+	cout << "ÃÃ¥Ã±Ã¯Ã³Ã¡Ã«Ã¨ÃªÃ  " << name << endl << " ÃÃ«Ã®Ã¹Ã Ã¤Ã¼: " << area << endl << " ÃÃ Ã±Ã¥Ã«Ã¥Ã­Ã¨Ã¥: " << population << endl << " ÃÃªÃ¢. Ã¢Ã Ã«Ã¾Ã²Ã» Ã¢ Ã¤Ã®Ã«Ã«Ã Ã°Ã Ãµ: " << term << endl << " Ã’Ã¨Ã¯: " << type << endl << endl;
 }
 
 Monarchy::Monarchy(string nm, int ar, int popn, State* p_next, string tp, int ag, int gn): State(nm, ar, popn, p_next) {
@@ -39,20 +39,20 @@ Monarchy::Monarchy(string nm, int ar, int popn, State* p_next, string tp, int ag
 	gen = gn;
 }
 Monarchy::~Monarchy() {
-	cout << "Ìîíàðõèÿ óíè÷òîæåíà" << endl;
+	cout << "ÃŒÃ®Ã­Ã Ã°ÃµÃ¨Ã¿ Ã³Ã­Ã¨Ã·Ã²Ã®Ã¦Ã¥Ã­Ã " << endl;
 }
 void Monarchy::show() {
-	cout << "Ìîíàðõèÿ " << name << endl << " Ïëîùàäü: " << area << endl << " Íàñåëåíèå: " << population << endl << " Âîçðàñò ìîíàðõà: " << age_of_monarch << endl << " Ïîêîëåíèå ìîíàðõîâ: " << gen << endl << " Òèï: " << type << endl << endl;
+	cout << "ÃŒÃ®Ã­Ã Ã°ÃµÃ¨Ã¿ " << name << endl << " ÃÃ«Ã®Ã¹Ã Ã¤Ã¼: " << area << endl << " ÃÃ Ã±Ã¥Ã«Ã¥Ã­Ã¨Ã¥: " << population << endl << " Ã‚Ã®Ã§Ã°Ã Ã±Ã² Ã¬Ã®Ã­Ã Ã°ÃµÃ : " << age_of_monarch << endl << " ÃÃ®ÃªÃ®Ã«Ã¥Ã­Ã¨Ã¥ Ã¬Ã®Ã­Ã Ã°ÃµÃ®Ã¢: " << gen << endl << " Ã’Ã¨Ã¯: " << type << endl << endl;
 }
 
 Kingdom::Kingdom(string nm, int ar, int popn, State* p_next, string tp, int ag, int gn, string tp_of_cr) : Monarchy(nm, ar, popn, p_next, tp, ag, gn) {
 	type_of_crown = tp_of_cr;
 }
 Kingdom::~Kingdom() {
-	cout << "Êîðîëåâñòâî óíè÷òîæåíî" << endl;
+	cout << "ÃŠÃ®Ã°Ã®Ã«Ã¥Ã¢Ã±Ã²Ã¢Ã® Ã³Ã­Ã¨Ã·Ã²Ã®Ã¦Ã¥Ã­Ã®" << endl;
 }
 void Kingdom::show() {
-	cout << "Êîðîëåâñòâî " << name << endl << " Ïëîùàäü: " << area << endl << " Íàñåëåíèå: " << population << endl << " Âîçðàñò ìîíàðõà: " << age_of_monarch << endl << " Ïîêîëåíèå ìîíàðõîâ: " << gen << endl << " Òèï: " << type << endl << " Òèï êîðîíû: " << type_of_crown << endl << endl;
+	cout << "ÃŠÃ®Ã°Ã®Ã«Ã¥Ã¢Ã±Ã²Ã¢Ã® " << name << endl << " ÃÃ«Ã®Ã¹Ã Ã¤Ã¼: " << area << endl << " ÃÃ Ã±Ã¥Ã«Ã¥Ã­Ã¨Ã¥: " << population << endl << " Ã‚Ã®Ã§Ã°Ã Ã±Ã² Ã¬Ã®Ã­Ã Ã°ÃµÃ : " << age_of_monarch << endl << " ÃÃ®ÃªÃ®Ã«Ã¥Ã­Ã¨Ã¥ Ã¬Ã®Ã­Ã Ã°ÃµÃ®Ã¢: " << gen << endl << " Ã’Ã¨Ã¯: " << type << endl << " Ã’Ã¨Ã¯ ÃªÃ®Ã°Ã®Ã­Ã»: " << type_of_crown << endl << endl;
 }
 
 void State::show_list() {
