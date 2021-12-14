@@ -2,8 +2,8 @@
 
 int main() {
 	setlocale(LC_ALL, "rus");
-	string x = "Месопотамия";
-	string y = "Монархия";
+	string x = "ГЊГҐГ±Г®ГЇГ®ГІГ Г¬ГЁГї";
+	string y = "ГЊГ®Г­Г Г°ГµГЁГї";
 	float z = 1565.54;
 	State f1(x, y, z);
 	State* f2 = new State();
