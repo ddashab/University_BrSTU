@@ -1,0 +1,11 @@
+﻿  Source.cpp
+D:\C++\мои проекты\test 3\test 3\Source.cpp(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\C++\мои проекты\test 3\test 3\Source.cpp(7,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+D:\C++\мои проекты\test 3\test 3\Source.cpp : message : see previous definition of '_CRT_SECURE_NO_WARNINGS'
+D:\C++\мои проекты\test 3\test 3\Source.cpp(20): warning C4405: 'str': identifier is reserved word
+D:\C++\мои проекты\test 3\test 3\Source.cpp(24): warning C4405: 'str': identifier is reserved word
+D:\C++\мои проекты\test 3\test 3\Source.cpp(26): warning C4405: 'str': identifier is reserved word
+D:\C++\мои проекты\test 3\test 3\Source.cpp(29): warning C4405: 'str': identifier is reserved word
+D:\C++\мои проекты\test 3\test 3\Source.cpp(63,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\C++\мои проекты\test 3\test 3\Source.cpp(70,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  test 3.vcxproj -> D:\C++\мои проекты\test 3\Debug\test 3.exe
