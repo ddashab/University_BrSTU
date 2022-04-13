@@ -2,9 +2,9 @@ masm
 model use16 small
 .486
 .stack 100h
-.data 
-x dw 4
-y dw 2
+.data
+x dw 7
+y dw 3
 a dw ?
 b dw ? 
 c dw ?
@@ -29,22 +29,13 @@ ficomp five
 fstsw ax 
 sahf ;swr->ax->
 jc met2 ;if x+y<-5 start met2
-ficomp five
-fstsw ax 
-sahf ;swr->ax->
-jc met3 
+call p3 
 jmp exit
 met1: call p1 ;call p1 if x+7>7
 jmp exit
-met2: call p2 ;call p2 if a+b=5
-jmp exit
-met3: call p3 ;call p3 
+met2: call p2 ;call p2 if x+y<-5
 exit:
-mov ah,39h 
-lea dx,z
-int 21h 
-mov ax,4c00h
-int 21h
+call OutInt 
 main endp
 p1 proc ;p1 proc x+y>7
 fild x ;st(0)=x
@@ -89,4 +80,26 @@ fisub three
 fist z
 ret 
 p3 endp
+OutInt proc
+ mov   ax,z
+   xor   cx,cx
+   mov   bx,10
+
+lp1:
+   xor   dx,dx
+   div   bx
+   add   dl,'0'
+   push  dx
+   inc   cx
+   or    ax,ax
+   jnz   lp1
+
+lp2:
+   pop   ax
+   int   29h
+   loop  lp2
+
+   mov   ah,4ch
+   int   21h
+OutInt endp
 end main
