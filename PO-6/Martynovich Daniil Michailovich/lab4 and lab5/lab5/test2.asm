@@ -39,10 +39,7 @@ jmp exit
 met2: call p2 ;call p2 if a+b=5
 jmp exit
 met3: call p3 ;call p3 
-exit:
-mov ah,39h 
-lea dx,z
-int 21h 
+exit: 
 mov ax,4c00h
 int 21h
 main endp
