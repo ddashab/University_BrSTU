@@ -49,50 +49,50 @@ main proc near
 main endp
 
 p1 proc near
-    fild x; st(0) = x
-    fimul x; st(0) = x*x
-    fild y; st(0) = y, st(1) = x*x
-    fimul y; st(0) = y*y
-    fistp tmp1; tmp1 = st(0) = y*y, st(0) = x*x
-    fiadd tmp1; st(0) = x*x + y*y
-    fisub one; st(0) = x*x + y*y - 1
-    fistp tmp2; tmp2 = st(0) = x*x + y*y - 1
-    fild tmp1; st(0) = y*y
-    fisub x; st(0) = y*y - x
-    fidiv tmp2; st(0) = (y*y - x)/(x*x + y*y - 1)
-    fistp z; z = st(0)
+    fild x      ;st(0) = x
+    fimul x     ;st(0) = x*x
+    fild y      ;st(0) = y, st(1) = x*x
+    fimul y     ;st(0) = y*y
+    fistp tmp1  ;tmp1 = st(0) = y*y, st(0) = x*x
+    fiadd tmp1  ;st(0) = x*x + y*y
+    fisub one   ;st(0) = x*x + y*y - 1
+    fistp tmp2  ;tmp2 = st(0) = x*x + y*y - 1
+    fild tmp1   ;st(0) = y*y
+    fisub x     ;st(0) = y*y - x
+    fidiv tmp2  ;st(0) = (y*y - x)/(x*x + y*y - 1)
+    fistp z     ;z = st(0)
     call print
     ret
 p1 endp
 
 p2 proc near
-    fild y; st(0) = y
-    fimul y; st(0) = y*y
-    fild x; st(0) = x, st(1) = y*y
-    fimul x; st(0) = x*x
-    fistp tmp1; tmp1 = st(0) = x*x, st(0) = y*y
-    fiadd tmp1; st(0) = y*y + x*x
-    fiadd one; st(0) = y*y + x*x + 1
-    fistp tmp2; tmp2 = st(0) = y*y + x*x + 1
-    fild tmp1; st(0) = x*x
-    fiadd y; st(0) = x*x + y
-    fiadd y; st(0) = x*x + 2y
-    fidiv tmp2; st(0) = (x*x + 2y)/(y*y + x*x + 1)
-    fistp z; z = st(0)
+    fild y      ;st(0) = y
+    fimul y     ;st(0) = y*y
+    fild x      ;st(0) = x, st(1) = y*y
+    fimul x     ;st(0) = x*x
+    fistp tmp1  ;tmp1 = st(0) = x*x, st(0) = y*y
+    fiadd tmp1  ;st(0) = y*y + x*x
+    fiadd one   ;st(0) = y*y + x*x + 1
+    fistp tmp2  ;tmp2 = st(0) = y*y + x*x + 1
+    fild tmp1   ;st(0) = x*x
+    fiadd y     ;st(0) = x*x + y
+    fiadd y     ;st(0) = x*x + 2y
+    fidiv tmp2  ;st(0) = (x*x + 2y)/(y*y + x*x + 1)
+    fistp z     ;z = st(0)
     call print
     ret
 p2 endp
 
 p3 proc near
-    fild x; st(0) = x
-    fimul x; st(0) = x*x
-    fild y; st(0) = y, st(1) = x*x
-    fimul y; st(0) = y*y
-    fimul two; st(0) = 2*y*y
-    fistp tmp1; tmp1 = st(0) = 2*y*y, st(0) = x*x
-    fiadd tmp1; st(0) = x*x + 2*y*y
-    fiadd four; st(0) = x*x + 2*y*y
-    fistp z; z = st(0)
+    fild x      ;st(0) = x
+    fimul x     ;st(0) = x*x
+    fild y      ;st(0) = y, st(1) = x*x
+    fimul y     ;st(0) = y*y
+    fimul two   ;st(0) = 2*y*y
+    fistp tmp1  ;tmp1 = st(0) = 2*y*y, st(0) = x*x
+    fiadd tmp1  ;st(0) = x*x + 2*y*y
+    fiadd four  ;st(0) = x*x + 2*y*y
+    fistp z     ;z = st(0)
     call print
     ret
 p3 endp
