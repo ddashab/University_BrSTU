@@ -1,0 +1,3 @@
+D:/My projects/labs/KSIS/lab1/C/cmake-build-debug/CMakeFiles/C.dir
+D:/My projects/labs/KSIS/lab1/C/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/My projects/labs/KSIS/lab1/C/cmake-build-debug/CMakeFiles/rebuild_cache.dir
